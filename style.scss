@@ -1,0 +1,187 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+    padding: 2rem;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.4rem;
+}
+
+.checkbox {
+    &__input {
+        display: none;
+        &:checked+.checkbox__label::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__label {
+        position: relative;
+        padding-left: 4rem;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.4rem;
+        &::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            background-color: #fc5656;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            border-radius: 1rem;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0.5rem;
+            width: 2rem;
+            height: 1rem;
+            transform: rotate(-45deg);
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s linear;
+        }
+    }
+}
+
+.radio {
+    margin: 5rem;
+    &__input {
+        display: none;
+        &:checked+.radio__label::before {
+            background-color: #fc5656;
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px #fc5656;
+        }
+    }
+    &__label {
+        position: relative;
+        padding-left: 4rem;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.4rem;
+        &::before {
+            content: "";
+            width: 2rem;
+            height: 2rem;
+            border-radius: 3rem;
+            background-color: #eee;
+            box-shadow: 0 0 0 4px #eee, 0 0 0 6px #b7c1cb;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: 0.2s linear;
+        }
+    }
+}
+
+.file {
+    &__input {
+        display: none;
+    }
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid solid rgba(#fc6565, 0.5);
+    ;
+    border-radius: 1rem;
+    background-color: rgba(#fc6565, 0.5);
+    &__label {
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.checkbox2 {
+    margin: 5rem;
+    &__input {
+        display: none;
+        &:checked+.checkbox2__label {
+            background-color: #7f6cfa;
+            .checkbox2__spin {
+                transform: translateX(60px);
+            }
+        }
+    }
+    &__label {
+        display: inline-block;
+        width: 10rem;
+        height: 4rem;
+        background-color: #ccc;
+        border-radius: 5rem;
+        cursor: pointer;
+        padding: 5px;
+        transition: 0.2s linear;
+    }
+    &__spin {
+        width: 4rem;
+        height: 4rem;
+        background-color: white;
+        border-radius: 5rem;
+        transition: 0.2s ease-in;
+    }
+}
+
+.input__style {
+    padding: 2rem;
+    border: 1px solid #bcc1cb;
+    border-radius: 4px;
+    width: 50%;
+    font-size: 1.4rem;
+    outline: none;
+    transition: all 0.25s linear;
+    &::-webkit-input-placeholder {
+        color: #bcc1cb;
+    }
+    &:focus {
+        border-color: #fc5656;
+        box-shadow: 0 0 0 0.2rem #ffe1de;
+    }
+}
+
+.button__style {
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 50%;
+    outline: none;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #fd607d;
+    box-shadow: 0 3px 0 0 #f66d6d;
+    transition: all 0.2s linear;
+    &:hover {
+        background-color: #ffe1de;
+        color: #fc5656;
+    }
+    &:active {
+        box-shadow: 0 2px 0 0 #e95656;
+        transform: translateY(3px);
+    }
+}
